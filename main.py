@@ -12,6 +12,10 @@ COINS = {
     "XMR": "monero"
 }
 
+@app.get("/")
+def read_root():
+    return {"status": "ok"}
+
 
 
 @app.get("/prices/latest")
