@@ -12,16 +12,15 @@ COINS = {
     "XMR": "monero"
 }
 
+
 @app.get("/")
 def read_root():
     return {"status": "ok"}
 
 
-
 @app.get("/prices/latest")
 def get_latest_price(symbol: str):
     symbol = symbol.upper()
-
     if symbol not in COINS:
         raise HTTPException(status_code=404, detail="Symbol not found")
 
